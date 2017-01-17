@@ -1,4 +1,4 @@
-package com.example.lmy.myapplication;
+package com.example.lmy.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -21,6 +21,11 @@ public class ShaderTextView extends TextView {
     Paint mPaint;
     LinearGradient mLinearGradient;
     Matrix mGradientMatrix;
+
+    public ShaderTextView(Context context) {
+        super(context);
+    }
+
     public ShaderTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }

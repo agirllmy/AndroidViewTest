@@ -1,52 +1,81 @@
 package com.example.lmy.myapplication;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.lmy.view.AudioBarView;
+import com.example.lmy.view.BackgroundTextView;
+import com.example.lmy.view.ExpandArcView;
+import com.example.lmy.view.ExpandScrollView;
+import com.example.lmy.view.ShaderTextView;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+
+
+public class MainActivity extends Activity {
+    private Unbinder unBinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        unBinder = ButterKnife.bind(this);
+    }
 
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    @OnClick(R.id.recycler_view)
+    public void onClickRecyclerView() {
+        Intent intent = new Intent(this, RecyclerViewTestActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.audio_bar_view)
+    public void onClickAudioBarView() {
+        Intent intent = new Intent();
+        intent.putExtra(Constants.VIEW_TAG, AudioBarView.class.getSimpleName());
+        intent.setClass(this, TestViewActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.backgrount_text_view)
+    public void onClickBackgroundTextView() {
+        Intent intent = new Intent();
+        intent.putExtra(Constants.VIEW_TAG, BackgroundTextView.class.getSimpleName());
+        intent.setClass(this, TestViewActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.expand_ard_view)
+    public void onClickExpandAcrView() {
+        Intent intent = new Intent();
+        intent.putExtra(Constants.VIEW_TAG, ExpandArcView.class.getSimpleName());
+        intent.setClass(this, TestViewActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.exprandScrollView)
+    public void onClickExprandScrollView() {
+        Intent intent = new Intent();
+        intent.putExtra(Constants.VIEW_TAG, ExpandScrollView.class.getSimpleName());
+        intent.setClass(this, TestViewActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.shader_text_view)
+    public void onClickShaderTextView() {
+        Log.e("wlaimm", "onClcikAudioBarView");
+        Intent intent = new Intent();
+        intent.putExtra(Constants.VIEW_TAG, ShaderTextView.class.getSimpleName());
+        intent.setClass(this, TestViewActivity.class);
+        startActivity(intent);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    protected void onDestroy() {
+        super.onDestroy();
+        unBinder.unbind();
     }
 }

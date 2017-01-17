@@ -1,4 +1,37 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="action_settings">Settings</string>
+    <string-array name="CodingLanguage">
+        <item>最怕空气突然安静</item>
+        <item>最怕朋友突然的关心</item>
+        <item>最怕回忆突然翻滚绞痛着不平息</item>
+        <item>最怕突然听到你的声音</item>
+        <item>想念如果会有声音</item>
+        <item>不愿那是悲伤的空气</item>
+        <item>事到如今</item>
+        <item>终于让自己属于我自己</item>
+        <item>只剩眼泪还骗不过自己</item>
+        <item>突然好想你</item>
+        <item>你会在哪里</item>
+        <item>过得快乐或委屈</item>
+        <item>突然好想你</item>
+        <item>突然锋利的回忆</item>
+        <item>突然模糊的眼镜</item>
+        <item>我们像一首最美丽的歌曲</item>
+        <item>变成两部悲伤的电影</item>
+        <item>为什么你</item>
+        <item>带我走过最难忘的旅行</item>
+        <item>然后留下最痛的纪念品</item>
+        <item>我们那么甜 那么美</item>
+        <item>那么相信</item>
+        <item>那么疯 那么热烈的曾经</item>
+        <item>为何我们还是要奔向各自的</item>
+        <item>幸福和遗憾中老区</item>
+        <item>突然好想你</item>
+        <item>你会在哪里</item>
+        <item>过得快乐或委屈</item>
+        <item>突然好想你</item>
+        <item>突然锋利的回忆</item>
+        <item>突然模糊的眼镜</item>
+    </string-array>
 </resources>

@@ -1,2 +1,6 @@
 # AndroidViewTest
 深入学习Android控件
+BackgroundTextView extends TextView，构建一个设置好背景的TextView
+ShaderTextView 颜色渐变的View
+ExpandArcView 弧线展示图
+AudioBarView 音频条View

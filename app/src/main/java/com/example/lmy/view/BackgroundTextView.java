@@ -1,10 +1,11 @@
-package com.example.lmy.myapplication;
+package com.example.lmy.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.TextView;
 
 /**
@@ -15,8 +16,26 @@ public class BackgroundTextView extends TextView {
     Paint mPaint1;
     Paint mPaint2;
 
+    public BackgroundTextView(Context context) {
+        super(context);
+        initView();
+    }
+
     public BackgroundTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initView();
+    }
+
+    public BackgroundTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        initView();
+    }
+
+    public BackgroundTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        initView();
+    }
+    public void initView(){
         mPaint1 = new Paint();
         mPaint1.setColor(getResources().getColor(android.R.color.holo_blue_light));
         mPaint1.setStyle(Paint.Style.FILL);
@@ -25,12 +44,11 @@ public class BackgroundTextView extends TextView {
         mPaint2.setStyle(Paint.Style.FILL);
     }
 
-    public BackgroundTextView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    public BackgroundTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setWidth(getMeasuredWidth()+200);
+        setHeight(getMeasuredHeight());
     }
 
     @Override
