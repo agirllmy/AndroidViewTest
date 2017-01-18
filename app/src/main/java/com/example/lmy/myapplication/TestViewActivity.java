@@ -17,6 +17,7 @@ import com.example.lmy.view.AudioBarView;
 import com.example.lmy.view.BackgroundTextView;
 import com.example.lmy.view.ExpandArcView;
 import com.example.lmy.view.ExpandScrollView;
+import com.example.lmy.view.ScrollerView;
 import com.example.lmy.view.ShaderTextView;
 
 import butterknife.BindDrawable;
@@ -88,6 +89,12 @@ public class TestViewActivity extends Activity {
             shaderTextView.setText("Hello World!");
             shaderTextView.setTextSize(36);
             ll.addView(shaderTextView);
+        } else if(ScrollerView.class.getSimpleName().equals(mViewTag)){
+            ScrollerView scrollerView = new ScrollerView(this);
+            LayoutParams lp = new LayoutParams(100,100);
+            scrollerView.setLayoutParams(lp);
+            scrollerView.setBackgroundColor(Color.BLACK);
+            ll.addView(scrollerView);
         }
     }
 }

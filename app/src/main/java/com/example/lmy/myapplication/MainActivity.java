@@ -9,6 +9,7 @@ import com.example.lmy.view.AudioBarView;
 import com.example.lmy.view.BackgroundTextView;
 import com.example.lmy.view.ExpandArcView;
 import com.example.lmy.view.ExpandScrollView;
+import com.example.lmy.view.ScrollerView;
 import com.example.lmy.view.ShaderTextView;
 
 import butterknife.ButterKnife;
@@ -66,9 +67,16 @@ public class MainActivity extends Activity {
 
     @OnClick(R.id.shader_text_view)
     public void onClickShaderTextView() {
-        Log.e("wlaimm", "onClcikAudioBarView");
         Intent intent = new Intent();
         intent.putExtra(Constants.VIEW_TAG, ShaderTextView.class.getSimpleName());
+        intent.setClass(this, TestViewActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.scroll_view)
+    public void onClickScrollView(){
+        Intent intent = new Intent();
+        intent.putExtra(Constants.VIEW_TAG, ScrollerView.class.getSimpleName());
         intent.setClass(this, TestViewActivity.class);
         startActivity(intent);
     }
